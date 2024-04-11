@@ -1,57 +1,53 @@
-# class Node:
-#     def __init__(self, url):
-#         self.url = url
-#         self.next = None
-#
-#
-# class Stack:
-#     def __init__(self):
-#         self.top_node = None
-#
-#     def push(self, url):
-#         new_node = Node(url)
-#         new_node.next = self.top_node
-#         self.top_node = new_node
-#
-#     def pop(self):
-#         if self.top_node:
-#             current_node = self.top_node
-#             self.top_node = self.top_node.next
-#             return current_node.url
-#         else:
-#             return None
-#
-#     def is_empty(self):
-#         return self.top_node is None
-#
-#
-# def main():
-#     history = Stack()
-#
-#     while True:
-#         url = input("Введіть URL (або 'q' для виходу): ")
-#         if url.lower() == "q":
-#             break
-#
-#         history.push(url)
-#
-#         print("Історія:", end=" ")
-#         current_node = history.top
-#         while current_node:
-#             print(current_node.url, end=" ")
-#             current_node = current_node.next
-#         print()
-#
-#         if not history.is_empty():
-#             previous_url = history.pop()
-#             print("Перехід до", previous_url)
-#
-#
-# if __name__ == "__main__":
-#     main()
+class Node:
+    def __init__(self, url):
+        self.url = url
+        self.next = None
 
 
-# Завдання 2
+class Stack:
+    def __init__(self):
+        self.top_node = None
+
+    def push(self, url):
+        new_node = Node(url)
+        new_node.next = self.top_node
+        self.top_node = new_node
+
+    def pop(self):
+        if self.top_node:
+            current_node = self.top_node
+            self.top_node = self.top_node.next
+            return current_node.url
+        else:
+            return None
+
+    def is_empty(self):
+        return self.top_node is None
+
+
+def main():
+    history = Stack()
+
+    while True:
+        url = input("Введіть URL (або 'q' для виходу): ")
+        if url.lower() == "q":
+            break
+
+        history.push(url)
+
+        print("Історія:", end=" ")
+        current_node = history.top_node
+        while current_node:
+            print(current_node.url, end=" ")
+            current_node = current_node.next
+        print()
+
+
+if __name__ == "__main__":
+    main()
+
+
+Завдання 2
 class Node:
     def __init__(self, value):
         self.value = value
